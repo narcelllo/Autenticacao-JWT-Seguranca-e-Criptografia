@@ -1,2 +1,2 @@
-# Autenticac-a-o-JWT-Seguran-a-e-Criptografia
+# Autenticação JWT - Segurança e Criptografia
 API para serviços bancários - Segurança e Criptografia
