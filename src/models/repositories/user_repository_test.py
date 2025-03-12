@@ -21,8 +21,8 @@ def test_repository_user():
     repo.registry_user(username, password)
 
     cursor = mock_connection.cursor.return_value
-    print()
-    print(cursor.execute.call_args[0])
+    #print()
+    #print(cursor.execute.call_args[0])
 
     assert "INSERT INTO users" in cursor.execute.call_args[0][0]
     assert "(username, password, balance)" in cursor.execute.call_args[0][0]
@@ -40,8 +40,8 @@ def test_edit_balance():
     repo.edit_balance(balance, user_id)
 
     cursor = mock_connection.cursor.return_value
-    print()
-    print(cursor.execute.call_args[0])
+    #print()
+    #print(cursor.execute.call_args[0])
 
     assert "UPDATE users" in cursor.execute.call_args[0][0]
     assert "SET balance = ?" in cursor.execute.call_args[0][0]
@@ -57,8 +57,8 @@ def test_get_user_by_username():
     repo.get_user_by_username(username)
 
     cursor = mock_connection.cursor.return_value
-    print()
-    print(cursor.execute.call_args[0])
+    #print()
+    #print(cursor.execute.call_args[0])
 
     assert "SELECT id, username, password" in cursor.execute.call_args[0][0]
     assert "FROM users" in cursor.execute.call_args[0][0]
