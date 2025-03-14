@@ -1,6 +1,6 @@
 import bcrypt
 
-class Passwordhandler:
+class PasswordHandler:
     def encrypt_password(self, password:str) -> str:
         salt = bcrypt.gensalt()
         hashed_password = bcrypt.hashpw(password.encode("UTF-8"), salt)

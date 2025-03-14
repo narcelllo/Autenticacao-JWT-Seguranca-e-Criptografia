@@ -1,8 +1,8 @@
-from .password_handler import Passwordhandler
+from .password_handler import PasswordHandler
 
 def test_encript():
     password = "123teste!@#"
-    password_handler = Passwordhandler()
+    password_handler = PasswordHandler()
 
     hashed_password = password_handler.encrypt_password(password)
     #print()
