@@ -1,10 +1,11 @@
 from src.models.interface.user_repository import UserRepositoryInterface
-from src.drivers.password_handler import Passwordhandler
+from src.drivers.password_handler import PasswordHandler
+from .interfaces.user_register import UserRegisterInterface
 
-class UserRegister():
+class UserRegister(UserRegisterInterface):
     def __init__(self,user_repository: UserRepositoryInterface) -> None:
         self.__user_repository = user_repository
-        self.__password_handler = Passwordhandler()
+        self.__password_handler = PasswordHandler()
 
     def registry(self, username: str, password: str) -> dict:
         hashed_password = self.__create_hash_password(password)
