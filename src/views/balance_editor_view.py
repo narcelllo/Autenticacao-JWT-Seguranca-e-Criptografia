@@ -2,6 +2,7 @@ from src.views.http_types.http_request import HttpRequest
 from src.views.http_types.http_response import HttpResponse
 from .interfaces.view_interface import ViewInterface
 from src.controlers.interfaces.balance_editor import BalanceEditorInterface
+from src.errors.types.http_bad_request import HttpBedRequestError
 
 class BalanceEditorView(ViewInterface):
     def __init__(self, controller: BalanceEditorInterface) -> None:
@@ -22,4 +23,4 @@ class BalanceEditorView(ViewInterface):
             or not user_id
             or not isinstance(new_balance,float)
             or int(header_user_id) != int(user_id)
-        ): raise Exception("Invalid imput")
+        ): raise HttpBedRequestError("Invalid imput")
